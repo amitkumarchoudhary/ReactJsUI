@@ -1,0 +1,31 @@
+.backdrop{
+    position: fixed;
+    top: 1;
+    bottom: 0;
+    /*left: 0;*/
+    /*right: 0;*/
+    /*background-color: 'rgb(0,0,0,0.7)';*/
+    /*background-color:antiquewhite;*/
+    background-color:bisque;
+    padding: 50px;
+    /*margin-left: 50px;*/
+    widows: 400px;
+}
+.model{
+    background-color: '#fff';
+    border-radius: 5;
+    max-width: 400px;
+    min-height: 430px;
+    margin: '0 auto';
+    padding: 30;
+    position: relative;
+    
+}
+
+.footerBody{
+    /*position: absolute;*/
+    bottom: 20px;
+    widows: 300px;
+    background-color: aquamarine;
+    height: 50px;
+}
