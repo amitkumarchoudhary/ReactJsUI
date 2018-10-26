@@ -1,5 +1,29 @@
-import {USER_FETCH_DATA,DELETE_FETCH_DATA,UPDATE_USER_FORM} from '../actions.js';
+import {
+  USER_FETCH_DATA,
+  DELETE_FETCH_DATA,
+  UPDATE_USER_FORM,
+  SAVE_USER_DATA,
+  SAVE_USER_ERROR
+} from '../actions.js';
 import axios from "axios";
+
+
+
+
+export function saveUserData(data) {
+return (dispatch)=> {
+
+              axios.post('http://localhost:9090/saveEmployeeDetails/',data)
+              .then((response) => {
+              dispatch({type: "SAVE_USER_DATA", payload: response.data})
+              }).catch((error) => {
+              dispatch({type: "SAVE_USER_ERROR", payload: error});
+    
+          })
+
+      };
+
+}
 
 
 export function getUserDetailsAction() {
@@ -8,9 +32,8 @@ return (dispatch)=> {
 
          axios.get('http://localhost:9090/getAllEmployeeDetails')
         .then((response) => {
-      dispatch({type: "USER_FETCH_DATA", payload: response.data});
-    })
-    .catch((error) => {
+         dispatch({type: "USER_FETCH_DATA", payload: response.data});
+        }).catch((error) => {
     //   dispatch({type: "FETCH_USERS_REJECTED", payload: error});
     
 })

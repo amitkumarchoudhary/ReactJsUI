@@ -1,6 +1,11 @@
 import {
-    USER_FETCH_DATA,UPDATE_USER_FORM
+    USER_FETCH_DATA,
+    UPDATE_USER_FORM,
+    DELETE_FETCH_DATA,
+    SAVE_USER_DATA
 } from '../actions.js';
+
+
 const INITIAL_STATE=[{
     name : "amit kumar chodary",
     id : 1,
@@ -8,22 +13,18 @@ const INITIAL_STATE=[{
     address : 'bihar'
 }]
 
-// export default (state={INITIAL_STATE} , action)=>{
-
-//     switch(action.type){
-
-//     case USER_FETCH_DATA:
-//       return action.data
-
-//       default :
-//          return state;
-//     }
-// }
 
 
  export default function getUserReducer(state ={INITIAL_STATE}, action) {
   switch (action.type) {
-    case "USER_FETCH_DATA":
+
+     case "SAVE_USER_DATA":
+      return({
+          ...state,
+          INITIAL_STATE : action.payload
+      })
+
+      case "USER_FETCH_DATA":
       return({
           ...state,
           INITIAL_STATE : action.payload

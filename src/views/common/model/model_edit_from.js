@@ -88,7 +88,7 @@ class ModelEditForm extends Component {
                                     <label for="Address">Address</label>
                                 </div>
                                 <div className="col-75">
-                                    <textarea id="address" name="address" ref={(value)=>{this.input=value}} value={this.props.dataItem.address}  onChange={this.handleChange}  placeholder="address......" style={{height:"50px"}}></textarea>
+                                    <textarea id="address" name="address" ref={(value)=>{this.input=value}} defaultValue={this.props.dataItem.address}  onChange={this.handleChange}  placeholder="address......" style={{height:"50px"}}></textarea>
                                 </div>
                         </div>
                         <div className="footerBody">

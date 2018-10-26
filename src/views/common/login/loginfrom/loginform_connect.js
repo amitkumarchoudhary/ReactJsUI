@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {saveLoginData} from '../../../../action/loginform.js';
+import {saveLoginData} from '../../../../action/loginAction.js';
 import LoginRegistrationForm from './loginregfrom.js';
 
 

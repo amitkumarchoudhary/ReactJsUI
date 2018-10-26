@@ -10,9 +10,8 @@ return (dispatch)=> {
          axios.post('http://localhost:9090/saveEmployeeDetails/',data)
          .then((response) => {
          dispatch({type: "SAVE_USER_DATA", payload: response.data})
-    })
-    .catch((error) => {
-    //   dispatch({type: "FETCH_USERS_REJECTED", payload: error});
+         }).catch((error) => {
+         dispatch({type: "SAVE_USER_ERROR", payload: error});
     
 })
 

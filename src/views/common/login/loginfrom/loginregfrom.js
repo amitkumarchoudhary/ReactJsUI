@@ -3,6 +3,7 @@ import{
     Link
 } from 'react-router-dom';
 import history from '../../../../router/history.js';
+import MiddleConnect from '../../middle/middle_connect.js'
 
 class LoginRegistrationForm extends Component {
  constructor(props){
@@ -40,11 +41,11 @@ class LoginRegistrationForm extends Component {
                 <form onSubmit={this.handleSubmit}>
                      <div className="row">
                         <div className="col-25">
-                            <label for="username">UserName</label>
+                            <label for="userId">UserId</label>
                         </div>
 
                         <div className="col-75">
-                            <input type="text" name="id"  value={this.state.id} onChange={this.onChangeData} required="required"   placeholder="Your name.."/>
+                            <input type="text" name="userId"  value={this.state.userId} onChange={this.onChangeData} required="required"   placeholder="Your name.."/>
                         </div>
                     </div>
 

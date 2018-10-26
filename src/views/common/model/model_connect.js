@@ -9,7 +9,7 @@ function mapStateToProps(state,ownProps) {
         dataItem : ownProps.dataItem,
         show : ownProps.show,
         close: ownProps.close,
-        nameListData : state.UserSaveForm.INITIAL_STATE
+        nameModelData : state.EmpReducerDetails.INITIAL_STATE
 
 
     }

@@ -1,12 +1,12 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {saveUserData} from '../../../action/userform.js';
+import {saveUserData} from '../../../action/useraction.js';
 import UserForm from './userform.js';
 
 
 function mapStateToProps(state) {
     return{
-       saveList : state.UserSaveForm.INITIAL_STATE
+       saveList : state.EmpReducerDetails.INITIAL_STATE
     }
    
 }

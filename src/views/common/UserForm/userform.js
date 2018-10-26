@@ -42,7 +42,7 @@ class UserForm extends Component {
     event.preventDefault();
     this.props.saveData(this.state.userData);
      alert('User Data is submitted');
-     this.resetdata();
+    //  this.resetdata();
      history.push('/home');
       
   }

@@ -16,14 +16,13 @@ class Middle extends Component {
  constructor(props){
      super(props);
      this.state={
-        show: false
+        show: false,
+        actualData :this.props.nameList
      }
     //  this.delteUser=this.delteUser.bind(this);
  }
  componentDidMount(){
-   console.log("props is middle" +JSON.stringify(this.props));
-  //  this.props.getUserDetailsAction();
-  this.props.fetchData();
+   this.props.fetchData();  
  }
  
  
@@ -44,19 +43,19 @@ closeModel=()=>{
 }
  
   render() {
-  
       const sidebar = (
-            this.props.nameList.map((data,index) =>
-            <ul className="a" key={data.id} >
+            this.state.actualData.map((userData,index) =>
+            <ul className="a" key={userData.userId} >
             <tr>
                   <li>
-                 <td style={{width:"800px"}}> <h4>ID: {data.id}    Name:  {data.name}  Salary :  {data.salary}     Address:  {data.address} </h4></td>
+                 <td style={{width:"800px"}}> 
+                   <h4>ID: {userData.userId}    Name:  {userData.name}  Salary :  {userData.salary}     Address:  {userData.address} </h4></td>
                  <td> 
-                  <button name="delete" style={{marginRight:"30px"}} value="delete" onClick={()=>this.props.deleteData(data.id)}> delete </button>
+                  <button name="delete" style={{marginRight:"30px"}} value="delete" onClick={()=>this.props.deleteData(userData.id)}> delete </button>
                   <button name="edit"  value="edit" onClick={this.showModel}> EDIT </button></td>
                   </li>
               </tr> 
-                <Model show={this.state.show} close={this.closeModel} dataItem={data}> 
+                <Model show={this.state.show} close={this.closeModel} dataItem={userData} index={index}> 
                 this is th ModelUser data
                </Model> 
             </ul>
